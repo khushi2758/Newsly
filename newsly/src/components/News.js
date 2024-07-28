@@ -108,7 +108,8 @@ export class News extends Component {
     super();
     console.log("it is a constructer");
     this.state = {
-      articals: this.articals
+      articals: this.articals,
+      loading : false
     }
   }
   render() {
@@ -116,17 +117,16 @@ export class News extends Component {
       <div className="container my-3">
         <h2>Newsly - Top Headlines</h2>
         <div className="row">
-          <div className="col-md-4">
-            <NewsItems title= "myTitle" description="mydesc"imgurl="https://ichef.bbci.co.uk/news/1024/branded_news/df6d/live/44c00ef0-4ba1-11ef-aebc-6de4d31bf5cd.jpg" />
-          </div>
-          <div className="col-md-4">
-            <NewsItems title= "myTitle" description="mydesc" />
-          </div>
-          <div className="col-md-4">
-            <NewsItems title= "myTitle" description="mydesc" />
+          {/*Looping through an array in JSX to display NewsItems from state---------------------------------------->>*/}
+        {this.state.articals.map((element)=>{
+           return <div className="col-md-4" key={element.url}>{/*----------kry= some unique element-------------------*/}
+             <NewsItems title= {element.title.slice(0,45)} description={element.description.slice(0,88)}imgurl={element.urlToImage} newsUrl={element.url} />
+           </div>
+          })}
+          {/*---------------------------------------------------------------------------------------------------------------*/}
           </div>
         </div>
-      </div>
+     
     );
   }
 }
