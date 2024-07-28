@@ -25,13 +25,13 @@ export class NavBar extends Component {
               id="navbarSupportedContent"
             >
               <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-                <li class="nav-item">
-                  <a class="nav-link active" aria-current="page" href="/">
+                <li className="nav-item">
+                  <a className="nav-link active" aria-current="page" href="/">
                     Home
                   </a>
                 </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="/">
+                <li className="nav-item">
+                  <a className="nav-link" href="/">
                     About
                   </a>
                 </li>

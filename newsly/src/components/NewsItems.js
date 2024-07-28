@@ -1,17 +1,21 @@
 import React, { Component } from 'react'
 
 export class NewsItems extends Component {
+  constructor(){
+    super();
+    console.log("it is a constructer");
+  }
   render() {
-   let {title,description} = this.props;
+   let {title,description,imgurl} = this.props;
     return (
       
       <div>
    <div className="card" style={{width: '18rem'}}>
-  <img src="https://ichef.bbci.co.uk/news/1024/branded_news/df6d/live/44c00ef0-4ba1-11ef-aebc-6de4d31bf5cd.jpg" className="card-img-top" alt="..."/>
+  <img src={imgurl} className="card-img-top" alt="..."/>
   <div className="card-body">
     <h5 className="card-title">{title}</h5>
     <p className="card-text">{description}</p>
-    <a href="/" className="btn btn-primary">Go somewhere</a>
+    <a href="/" className="btn btn-sm btn-primary">Read More</a>
   </div>
 </div>
         </div>
