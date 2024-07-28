@@ -5,10 +5,9 @@ export class NewsItems extends Component {
   render() {
    let {title,description,imgurl, newsUrl} = this.props;
     return (
-      
       <div>
    <div className="card" style={{width: '18rem'}}>
-  <img src={imgurl} className="card-img-top" alt="..."/>
+  <img src={!imgurl?"https://assets.bwbx.io/images/users/iqjWHBFdfxIU/iIA2iKe7X0aI/v1/1200x800.jpg":imgurl} className="card-img-top" alt="..."/>
   <div className="card-body">
     <h5 className="card-title">{title}...</h5>
     <p className="card-text">{description}...</p>
