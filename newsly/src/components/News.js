@@ -8,16 +8,39 @@ export class News extends Component {
     console.log("it is a constructer");
     this.state = {
       articles: [],
-      loading : false
+      loading : false,
+      page:1
     }
   }
+ 
     async componentDidMount(){
-    let url = "https://newsapi.org/v2/top-headlines?country=Us&category=business&apiKey=082a76f337704f5f89ea3186f64eed5e"
+    let url = "https://newsapi.org/v2/top-headlines?country=Us&category=business&apiKey=082a76f337704f5f89ea3186f64eed5e&page=1"
       let data = await fetch(url);
       let parsedData =await data.json()
       console.log(parsedData);
    this.setState({articles: parsedData.articles})
     }
+    handlePreviousClick= async ()=>{
+      console.log("prev")
+      let url = `https://newsapi.org/v2/top-headlines?country=Us&category=business&apiKey=082a76f337704f5f89ea3186f64eed5e&page=${this.state.page - 1}`
+      let data = await fetch(url);
+      let parsedData =await data.json()
+      this.setState({
+        page:this.state.page - 1,
+        articles: parsedData.articles
+      })
+
+        }
+        handleNextClick= async () =>{
+          console.log("next")
+          let url = `https://newsapi.org/v2/top-headlines?country=Us&category=business&apiKey=082a76f337704f5f89ea3186f64eed5e&page=${this.state.page + 1}`
+          let data = await fetch(url);
+          let parsedData =await data.json()
+          this.setState({
+            page:this.state.page + 1,
+            articles: parsedData.articles
+          })
+        }
   render() {
     console.log("render")
     return (
@@ -31,6 +54,11 @@ export class News extends Component {
            </div>
           })}
           {/*---------------------------------------------------------------------------------------------------------------*/}
+          <div className="container d-flex justify-content-between my-4">
+          <button   disabled={this.state.page<=1} type="button" className="btn btn-dark" onClick={this.handlePreviousClick}> 	&larr;preview</button>
+          {/*disable ==> {this.state.page>=1} // its mean if page is > or = 1 then the previous bottor will be disable--------------------------------- */}
+          <button   type="button" className="btn btn-dark" onClick={this.handleNextClick}>next	&rarr;</button>
+          </div>
           </div>
         </div>
      
