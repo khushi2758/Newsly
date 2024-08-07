@@ -34,9 +34,8 @@ export class NavBar extends Component {
                 
            <li className="nav-item"> <Link className="nav-Link text-light" to="/business"> Business       </Link> </li>
            <li className="nav-item">  <Link className="nav-Link text-light" to="/entertainment"> Entertainment</Link></li>
-           <li className="nav-item"> <Link className="nav-Link text-light" to="/general"> general</Link></li>
-           <li className="nav-item"><Link className="nav-Link text-light" to="/health"> health</Link></li>
-           <li className="nav-item"> <Link className="nav-Link text-light" to="/health"> health</Link></li>
+           <li className="nav-item"> <Link className="nav-Link text-light" to="/general"> Gneral</Link></li>
+           <li className="nav-item"><Link className="nav-Link text-light" to="/health"> Health</Link></li>
            <li className="nav-item"> <Link className="nav-Link text-light" to="/science"> science   </Link> </li>          
            <li className="nav-item"> <Link className="nav-Link text-light" to="/sports"> sports</Link></li>
            <li className="nav-item"> <Link className="nav-Link text-light" to="/technology"> technology</Link></li>

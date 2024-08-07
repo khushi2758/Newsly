@@ -80,7 +80,7 @@ export class News extends Component {
           {/*Looping through an array in JSX to display NewsItems from state---------------------------------------->>*/}
         {! this.setState.loading && this.state.articles.map((element)=>{
            return <div className="col-md-4" key={element.url}>{/*----------kry= some unique element-------------------*/}
-             <NewsItems title= {element.title?element.title:" "} description={element.description?element.description.slice(0,88):" "}imgurl={element.urlToImage} newsUrl={element.url} />
+             <NewsItems title= {element.title?element.title:" "} description={element.description?element.description.slice(0,88):" "}imgurl={element.urlToImage} newsUrl={element.url} date={element.publishedAt} author={element.author}source={element.source.name} />
            </div>
           })}
           {/*---------------------------------------------------------------------------------------------------------------*/}
