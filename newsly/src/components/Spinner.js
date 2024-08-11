@@ -5,7 +5,7 @@ export class Spinner extends Component {
     return (
       <div>
         <div className = "text-center">
-        <img src={Hourglass} alt="Hourglass" />
+        <img src={Hourglass} alt="Hourglass"className='my3' />
       </div></div>
     )
   }
